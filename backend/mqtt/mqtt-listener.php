@@ -8,7 +8,7 @@ use PhpMqtt\Client\ConnectionSettings;
 $server   = '172.16.99.1';
 $port     = 1883;
 $clientId = 'php-backend-nfc';
-
+ 
 $settings = (new ConnectionSettings())
     ->setKeepAliveInterval(60);
 
