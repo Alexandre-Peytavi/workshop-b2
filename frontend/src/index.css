@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #060b0f;
+  color: #d1fae5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.portal-glow {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.25), 0 0 60px rgba(52, 211, 153, 0.08);
+}
+
+.portal-text-glow {
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+}
