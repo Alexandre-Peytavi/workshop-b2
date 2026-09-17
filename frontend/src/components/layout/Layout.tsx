@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="border-b border-emerald-900/40 bg-black/70 backdrop-blur sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-4 h-13 flex items-center gap-6">
           <span className="font-black text-base tracking-tight text-emerald-400 portal-text-glow whitespace-nowrap">
-            ☢ R&M ARCADE
+            ☢ La Machine à Trucs Intergalactique™ 
           </span>
           <nav className="flex gap-1">
             {links.map(({ to, label }) => (
