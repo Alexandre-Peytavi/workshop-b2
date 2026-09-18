@@ -10,8 +10,10 @@ export function Home() {
   const [detected, setDetected] = useState<ConnectedObject | null>(null)
   const held = useRef<Set<string>>(new Set())
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  
 const move = useCallback((_dir: Dir) => {
-  fetch('http://localhost:8000/send-command.php', {
+  fetch('api/send-command.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'cmd=' + _dir
@@ -22,7 +24,7 @@ const move = useCallback((_dir: Dir) => {
 const drop = () => {
   if (dropping) return
   setDropping(true)
-  fetch('http://localhost:8000/send-command.php', {
+  fetch('api/send-command.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'cmd=drop'
@@ -32,7 +34,7 @@ const drop = () => {
 
   // nfc
   const checkNow = () => {
-    fetch('http://localhost:8000/get-object.php').then(res => res.json()).then(data => {
+    fetch('api/get-object.php').then(res => res.json()).then(data => {
         const found = OBJECTS.find(obj => obj.name === data.uid)
         if (found) setDetected(found)}).catch(err => console.error(err))
   }

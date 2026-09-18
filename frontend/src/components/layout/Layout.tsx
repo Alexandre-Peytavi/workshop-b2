@@ -12,7 +12,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     let lastUid = ''
 
     const interval = setInterval(() => {
-      fetch('http://localhost:8000/get-object.php')
+      fetch('api/get-object.php')
         .then(res => res.json())
         .then(data => {
           if (data.uid && data.uid !== lastUid) {
